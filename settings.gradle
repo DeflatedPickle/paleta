@@ -1,0 +1,6 @@
+rootProject.name = 'paleta'
+
+include 'master'
+
+include 'example'
+include 'demo'

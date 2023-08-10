@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+repositories {
+    mavenCentral()
+
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://github.com/eugener/oxbow/raw/master/maven/repository' }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    implementation 'com.formdev:flatlaf:3.1.1'
+
+    implementation 'com.deflatedpickle:FlatOpenDyslexicFont:'
+    implementation 'com.deflatedpickle:FlatCatppuccinIJTheme:'
+
+    implementation project(':')
+}
+
+task runJava(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "Main"
+}
+
+task runKotlin(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "MainKt"
+}
